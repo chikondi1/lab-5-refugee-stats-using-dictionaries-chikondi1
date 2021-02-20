@@ -1,0 +1,51 @@
+'''
+Chikondi Thangata
+1 October 2020
+Python 3.8.5
+This code creates a dictionary of refugee data from 5 different countries. The inputs are country names and number of refguees and the outputs are a dictionary that includes keys and values that allow the code to display the number of refugees in each country. 
+'''
+
+#I imported BeautifulSoup in order to webscrape the page and add up the refugee numbers, however I wasn't fully successful with this.
+#import requests
+#from bs4 import BeautifulSoup
+
+#I tried to webscrape the page using BeautifulSoup, however I wasn't completely successful. I used Chad as an example as it was the first country in the list, and the code was able to webscrape everywhere that equaled Chad, however I wasn't sure how to select the numbers from specifically 2014. 
+#url = "https://en.wikipedia.org/wiki/Refugee_camp"
+#page = requests.get(url)
+#soup=BeautifulSoup(page.content,"html.parser")
+
+#camp_chad = soup.find_all('td')
+#for i in camp_chad:
+#  country=i.text.strip()
+#   if (country == 'Chad'):
+#      print(country)
+
+
+#This is a dictionary with 5 key-value pairs of countries and the number of refugees in the country for 2014. The numbers were calculated by converting the table on the webpage to an Excel file and using SUM to add the numbers up. 
+countrylist = {'KENYA':506508,'SUDAN':74362,'ETHIOPIA':503120,'ZAMBIA':8410,'PAKISTAN':416865,'THAILAND':122349} #These type of brackets are used as it is a list in a dictionary. 
+print(countrylist)
+
+
+#The keys display the country names.
+def printDictionary(dicInput): 
+  for(x) in dicInput.keys(): 
+    print(x) 
+
+printDictionary(countrylist)
+
+#The values here are the number of refugees. By adding .values() to the countrylist, we are able to just pick out the integers.
+def printDictionary(dicInput): 
+  for(y) in dicInput.values(): 
+    print(y) 
+
+printDictionary(countrylist)
+
+
+#The items include the keys and values together, however they are itemized. 
+countrylist.items()
+
+def printDictionary(dicInput): #This function allows the values to be displayed outside of the list. 
+  for(x,y) in dicInput.items(): #x and y refer to the keys and the values, respectively. 
+    print(x, "has" ,y, "refugees.") #The statement is printed with a script in the middle of it so that it can read as a statement. 
+
+printDictionary(countrylist)
